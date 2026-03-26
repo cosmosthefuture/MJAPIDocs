@@ -13,8 +13,7 @@ http:
     type: json
     data: |-
       {
-        "phone_number": "0999999999",
-        "otp": "000000",
+        "phone_number": "09111111111",
         "name": "New User",
         "username": "newuser123",
         "email": "newuser@example.com",

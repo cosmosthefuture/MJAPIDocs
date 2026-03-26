@@ -13,7 +13,7 @@ http:
     type: json
     data: |-
       {
-        "rule_name": "Rule Four",
+        "rule_name": "Rule One",
         "match_qty_per_round": 4,
         "max_player": 4,
         "bet_amount": 5000,
