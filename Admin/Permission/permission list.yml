@@ -1,0 +1,424 @@
+info:
+  name: permission list
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{baseUrl}}/admins/permissions?page=1&per_page=10"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: page
+      value: "1"
+      type: query
+    - name: per_page
+      value: "10"
+      type: query
+  auth:
+    type: bearer
+    token: "{{adminAccessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/admins/permissions?page=1&per_page=10"
+      method: GET
+      headers:
+        - name: Content-Type
+          value: application/json
+      params:
+        - name: page
+          value: "1"
+          type: query
+        - name: per_page
+          value: "10"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Sat, 21 Mar 2026 04:59:34 GMT
+        - name: content-type
+          value: application/json
+        - name: vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Admin Lists"
+            },
+            "data": [
+              {
+                "id": 1,
+                "name": "admin_management",
+                "label": "Admin Management",
+                "created_at": "2026-03-21 04:53:59",
+                "updated_at": "2026-03-21 04:53:59",
+                "permission_types": [
+                  {
+                    "id": 1,
+                    "permission_group_id": 1,
+                    "name": "admin_view",
+                    "label": "View Admins",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 2,
+                    "permission_group_id": 1,
+                    "name": "admin_create",
+                    "label": "Create Admin",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 3,
+                    "permission_group_id": 1,
+                    "name": "admin_update",
+                    "label": "Update Admin",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 4,
+                    "permission_group_id": 1,
+                    "name": "admin_delete",
+                    "label": "Delete Admin",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  }
+                ]
+              },
+              {
+                "id": 2,
+                "name": "user_management",
+                "label": "User Management",
+                "created_at": "2026-03-21 04:53:59",
+                "updated_at": "2026-03-21 04:53:59",
+                "permission_types": [
+                  {
+                    "id": 5,
+                    "permission_group_id": 2,
+                    "name": "user_view",
+                    "label": "View Users",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 6,
+                    "permission_group_id": 2,
+                    "name": "user_create",
+                    "label": "Create User",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 7,
+                    "permission_group_id": 2,
+                    "name": "user_update",
+                    "label": "Update User",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 8,
+                    "permission_group_id": 2,
+                    "name": "user_delete",
+                    "label": "Delete User",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  }
+                ]
+              },
+              {
+                "id": 3,
+                "name": "payment_method_management",
+                "label": "Payment Method Management",
+                "created_at": "2026-03-21 04:53:59",
+                "updated_at": "2026-03-21 04:53:59",
+                "permission_types": [
+                  {
+                    "id": 9,
+                    "permission_group_id": 3,
+                    "name": "payment_method_view",
+                    "label": "View Payment Methods",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 10,
+                    "permission_group_id": 3,
+                    "name": "payment_method_create",
+                    "label": "Create Payment Method",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 11,
+                    "permission_group_id": 3,
+                    "name": "payment_method_update",
+                    "label": "Update Payment Method",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 12,
+                    "permission_group_id": 3,
+                    "name": "payment_method_delete",
+                    "label": "Delete Payment Method",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  }
+                ]
+              },
+              {
+                "id": 4,
+                "name": "user_deposit_management",
+                "label": "User Deposit Management",
+                "created_at": "2026-03-21 04:53:59",
+                "updated_at": "2026-03-21 04:53:59",
+                "permission_types": [
+                  {
+                    "id": 13,
+                    "permission_group_id": 4,
+                    "name": "user_deposit_request_view",
+                    "label": "View User Deposit Requests",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 14,
+                    "permission_group_id": 4,
+                    "name": "manual_create_user_deposit",
+                    "label": "Manual Create User Deposit",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 15,
+                    "permission_group_id": 4,
+                    "name": "user_deposit_request_action",
+                    "label": "Approve or Reject User Deposit Request",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  }
+                ]
+              },
+              {
+                "id": 5,
+                "name": "user_withdraw_management",
+                "label": "User Withdraw Management",
+                "created_at": "2026-03-21 04:53:59",
+                "updated_at": "2026-03-21 04:53:59",
+                "permission_types": [
+                  {
+                    "id": 16,
+                    "permission_group_id": 5,
+                    "name": "user_withdraw_request_view",
+                    "label": "View User Withdraw Requests",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 17,
+                    "permission_group_id": 5,
+                    "name": "manual_create_user_withdraw",
+                    "label": "Manual Create User Withdraw",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 18,
+                    "permission_group_id": 5,
+                    "name": "user_withdraw_request_action",
+                    "label": "Approve or Reject User Withdraw Request",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  }
+                ]
+              },
+              {
+                "id": 6,
+                "name": "agent_withdraw_management",
+                "label": "Agent Withdraw Management",
+                "created_at": "2026-03-21 04:53:59",
+                "updated_at": "2026-03-21 04:53:59",
+                "permission_types": [
+                  {
+                    "id": 19,
+                    "permission_group_id": 6,
+                    "name": "agent_withdraw_request_view",
+                    "label": "View Agent Withdraw Requests",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 20,
+                    "permission_group_id": 6,
+                    "name": "manual_create_agent_withdraw",
+                    "label": "Manual Create Agent Withdraw",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 21,
+                    "permission_group_id": 6,
+                    "name": "agent_withdraw_request_action",
+                    "label": "Approve or Reject Agent Withdraw Request",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  }
+                ]
+              },
+              {
+                "id": 7,
+                "name": "master_withdraw_management",
+                "label": "Master Withdraw Management",
+                "created_at": "2026-03-21 04:53:59",
+                "updated_at": "2026-03-21 04:53:59",
+                "permission_types": [
+                  {
+                    "id": 22,
+                    "permission_group_id": 7,
+                    "name": "master_withdraw_request_view",
+                    "label": "View Master Withdraw Requests",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 23,
+                    "permission_group_id": 7,
+                    "name": "manual_create_master_withdraw",
+                    "label": "Manual Create Master Withdraw",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 24,
+                    "permission_group_id": 7,
+                    "name": "master_withdraw_request_action",
+                    "label": "Approve or Reject Master Withdraw Request",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  }
+                ]
+              },
+              {
+                "id": 8,
+                "name": "global_commission_setting_management",
+                "label": "Global Commission Setting Management",
+                "created_at": "2026-03-21 04:53:59",
+                "updated_at": "2026-03-21 04:53:59",
+                "permission_types": [
+                  {
+                    "id": 25,
+                    "permission_group_id": 8,
+                    "name": "global_commission_setting_view",
+                    "label": "View Global Commission Settings",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 26,
+                    "permission_group_id": 8,
+                    "name": "global_commission_setting_update",
+                    "label": "Update Global Commission Setting",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  }
+                ]
+              },
+              {
+                "id": 9,
+                "name": "game_management",
+                "label": "Game Management",
+                "created_at": "2026-03-21 04:53:59",
+                "updated_at": "2026-03-21 04:53:59",
+                "permission_types": [
+                  {
+                    "id": 27,
+                    "permission_group_id": 9,
+                    "name": "game_view",
+                    "label": "View Games",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 28,
+                    "permission_group_id": 9,
+                    "name": "game_update",
+                    "label": "Update Game",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  }
+                ]
+              },
+              {
+                "id": 10,
+                "name": "game_rule_management",
+                "label": "Game Rule Management",
+                "created_at": "2026-03-21 04:53:59",
+                "updated_at": "2026-03-21 04:53:59",
+                "permission_types": [
+                  {
+                    "id": 29,
+                    "permission_group_id": 10,
+                    "name": "game_rule_view",
+                    "label": "View Game Rules",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 30,
+                    "permission_group_id": 10,
+                    "name": "game_rule_create",
+                    "label": "Create Game Rule",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 31,
+                    "permission_group_id": 10,
+                    "name": "game_rule_update",
+                    "label": "Update Game Rule",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  },
+                  {
+                    "id": 32,
+                    "permission_group_id": 10,
+                    "name": "game_rule_delete",
+                    "label": "Delete Game Rule",
+                    "created_at": "2026-03-21 04:53:59",
+                    "updated_at": "2026-03-21 04:53:59"
+                  }
+                ]
+              }
+            ],
+            "meta": {
+              "total": 15,
+              "per_page": 10,
+              "current_page": 1,
+              "total_pages": 2
+            }
+          }

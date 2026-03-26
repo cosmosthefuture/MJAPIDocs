@@ -1,0 +1,34 @@
+info:
+  name: update
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/admins/masters/:id"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: "2"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Master Kyaw Gyi Update",
+      //   "email": "masterkyawgyi@gmail.com",
+        "phone_number": "09111111111",
+        "username": "kyawgyiexample123",
+        "winning_commission_percentage": 6
+      }
+  auth:
+    type: bearer
+    token: "{{adminAccessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

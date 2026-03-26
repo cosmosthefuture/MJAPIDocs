@@ -1,0 +1,30 @@
+info:
+  name: update value
+  type: http
+  seq: 2
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/admins/global-commission-settings/:id"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: "1"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "value": 2.5
+      }
+  auth:
+    type: bearer
+    token: "{{adminAccessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

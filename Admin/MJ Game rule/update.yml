@@ -1,0 +1,164 @@
+info:
+  name: update
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/admins/mah-jong-game-rules/:id"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: "1"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "rule_name": "Rule Two",
+        "match_qty_per_round": 4,
+        "max_player": 4,
+        "bet_amount": 5000,
+
+        "fees": [
+          {
+            "fee_type": "room",
+            "amount": 100,
+            "payer_type": "each_player"
+          },
+          {
+            "fee_type": "registration",
+            "amount": 50,
+            "payer_type": "winner"
+          },
+          {
+            "fee_type": "winning_commission",
+            "amount": 5,
+            "payer_type": "winner"
+          }
+        ]
+      }
+  auth:
+    type: bearer
+    token: "{{adminAccessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/admins/mah-jong-game-rules/:id"
+      method: PUT
+      headers:
+        - name: Content-Type
+          value: application/json
+      params:
+        - name: id
+          value: "1"
+          type: path
+      body:
+        type: json
+        data: |-
+          {
+            "rule_name": "Rule Two",
+            "match_qty_per_round": 4,
+            "max_player": 4,
+            "bet_amount": 5000,
+
+            "fees": [
+              {
+                "fee_type": "room",
+                "amount": 100,
+                "payer_type": "each_player"
+              },
+              {
+                "fee_type": "registration",
+                "amount": 50,
+                "payer_type": "winner"
+              },
+              {
+                "fee_type": "winning_commission",
+                "amount": 5,
+                "payer_type": "winner"
+              }
+            ]
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Thu, 26 Mar 2026 08:17:51 GMT
+        - name: content-type
+          value: application/json
+        - name: vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Game Rule is updated successfully"
+            },
+            "data": {
+              "id": 1,
+              "game_id": 2,
+              "rule_name": "Rule Two",
+              "match_qty_per_round": 4,
+              "max_player": 4,
+              "bet_amount": 5000,
+              "status": "inactive",
+              "created_by": 1,
+              "updated_by": 1,
+              "created_at": "2026-03-26 08:16:25",
+              "updated_at": "2026-03-26 08:17:47",
+              "deleted_at": null,
+              "fees": [
+                {
+                  "id": 7,
+                  "mah_jong_game_rule_id": 1,
+                  "fee_type": "room",
+                  "amount": 100,
+                  "payer_type": "each_player",
+                  "created_at": "2026-03-26 08:17:51",
+                  "updated_at": "2026-03-26 08:17:51",
+                  "deleted_at": null
+                },
+                {
+                  "id": 8,
+                  "mah_jong_game_rule_id": 1,
+                  "fee_type": "registration",
+                  "amount": 50,
+                  "payer_type": "winner",
+                  "created_at": "2026-03-26 08:17:51",
+                  "updated_at": "2026-03-26 08:17:51",
+                  "deleted_at": null
+                },
+                {
+                  "id": 9,
+                  "mah_jong_game_rule_id": 1,
+                  "fee_type": "winning_commission",
+                  "amount": 5,
+                  "payer_type": "winner",
+                  "created_at": "2026-03-26 08:17:51",
+                  "updated_at": "2026-03-26 08:17:51",
+                  "deleted_at": null
+                }
+              ]
+            }
+          }

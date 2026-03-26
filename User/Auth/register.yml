@@ -1,0 +1,31 @@
+info:
+  name: register
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/users/auth/register"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "phone_number": "0999999999",
+        "otp": "000000",
+        "name": "New User",
+        "username": "newuser123",
+        "email": "newuser@example.com",
+      //   "agent_code": "09H55",
+        "password": "password123",
+        "password_confirmation": "password123",
+        "fcm_token": "example"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

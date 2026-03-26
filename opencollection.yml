@@ -1,0 +1,30 @@
+opencollection: 1.0.0
+
+info:
+  name: Game Two
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  variables:
+    - name: baseUrl
+      value: http://localhost:8000/api
+    - name: adminAccessToken
+      value: 1|0u36wuUymSWBOYUFRCWQValh8WHRhdnnyJQEseqr9b9081f4
+    - name: userAccessToken
+      value: 2|l8sT6tQTKLl7S3lyCZHlBMT4IShM8YKZldTTBQTcd4c7a11b
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

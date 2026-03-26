@@ -1,0 +1,261 @@
+info:
+  name: login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/admins/auth/login"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "phone_number": "09123456789",
+        "password": "password123",
+        "fcm_token": "example"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/admins/auth/login"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "phone_number": "09123456789",
+            "password": "password123",
+            "fcm_token": "example"
+          }
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Sat, 21 Mar 2026 04:55:02 GMT
+        - name: content-type
+          value: application/json
+        - name: vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Admin account Logged in Successfully"
+            },
+            "data": {
+              "token_type": "bearer",
+              "accessToken": "1|QMh6owtOz70K33d1hvK6m2yzov1k7z59fnyiU2i646353907",
+              "user": {
+                "id": 1,
+                "name": "Super Admin",
+                "phone_number": "09123456789",
+                "username": "adminexample123",
+                "status": "active",
+                "force_reset_password": false,
+                "last_logined": "2026-03-21 04:55:02",
+                "email_verified_at": null,
+                "created_at": "2026-03-21 04:54:00",
+                "updated_at": "2026-03-21 04:55:02",
+                "deleted_at": null
+              },
+              "type": "admin",
+              "permission_list": [
+                {
+                  "permission_type_id": 1,
+                  "permission_type_name": "admin_view"
+                },
+                {
+                  "permission_type_id": 2,
+                  "permission_type_name": "admin_create"
+                },
+                {
+                  "permission_type_id": 3,
+                  "permission_type_name": "admin_update"
+                },
+                {
+                  "permission_type_id": 4,
+                  "permission_type_name": "admin_delete"
+                },
+                {
+                  "permission_type_id": 5,
+                  "permission_type_name": "user_view"
+                },
+                {
+                  "permission_type_id": 6,
+                  "permission_type_name": "user_create"
+                },
+                {
+                  "permission_type_id": 7,
+                  "permission_type_name": "user_update"
+                },
+                {
+                  "permission_type_id": 8,
+                  "permission_type_name": "user_delete"
+                },
+                {
+                  "permission_type_id": 9,
+                  "permission_type_name": "payment_method_view"
+                },
+                {
+                  "permission_type_id": 10,
+                  "permission_type_name": "payment_method_create"
+                },
+                {
+                  "permission_type_id": 11,
+                  "permission_type_name": "payment_method_update"
+                },
+                {
+                  "permission_type_id": 12,
+                  "permission_type_name": "payment_method_delete"
+                },
+                {
+                  "permission_type_id": 13,
+                  "permission_type_name": "user_deposit_request_view"
+                },
+                {
+                  "permission_type_id": 14,
+                  "permission_type_name": "manual_create_user_deposit"
+                },
+                {
+                  "permission_type_id": 15,
+                  "permission_type_name": "user_deposit_request_action"
+                },
+                {
+                  "permission_type_id": 16,
+                  "permission_type_name": "user_withdraw_request_view"
+                },
+                {
+                  "permission_type_id": 17,
+                  "permission_type_name": "manual_create_user_withdraw"
+                },
+                {
+                  "permission_type_id": 18,
+                  "permission_type_name": "user_withdraw_request_action"
+                },
+                {
+                  "permission_type_id": 19,
+                  "permission_type_name": "agent_withdraw_request_view"
+                },
+                {
+                  "permission_type_id": 20,
+                  "permission_type_name": "manual_create_agent_withdraw"
+                },
+                {
+                  "permission_type_id": 21,
+                  "permission_type_name": "agent_withdraw_request_action"
+                },
+                {
+                  "permission_type_id": 22,
+                  "permission_type_name": "master_withdraw_request_view"
+                },
+                {
+                  "permission_type_id": 23,
+                  "permission_type_name": "manual_create_master_withdraw"
+                },
+                {
+                  "permission_type_id": 24,
+                  "permission_type_name": "master_withdraw_request_action"
+                },
+                {
+                  "permission_type_id": 25,
+                  "permission_type_name": "global_commission_setting_view"
+                },
+                {
+                  "permission_type_id": 26,
+                  "permission_type_name": "global_commission_setting_update"
+                },
+                {
+                  "permission_type_id": 27,
+                  "permission_type_name": "game_view"
+                },
+                {
+                  "permission_type_id": 28,
+                  "permission_type_name": "game_update"
+                },
+                {
+                  "permission_type_id": 29,
+                  "permission_type_name": "game_rule_view"
+                },
+                {
+                  "permission_type_id": 30,
+                  "permission_type_name": "game_rule_create"
+                },
+                {
+                  "permission_type_id": 31,
+                  "permission_type_name": "game_rule_update"
+                },
+                {
+                  "permission_type_id": 32,
+                  "permission_type_name": "game_rule_delete"
+                },
+                {
+                  "permission_type_id": 33,
+                  "permission_type_name": "game_room_view"
+                },
+                {
+                  "permission_type_id": 34,
+                  "permission_type_name": "game_room_create"
+                },
+                {
+                  "permission_type_id": 35,
+                  "permission_type_name": "game_room_update"
+                },
+                {
+                  "permission_type_id": 36,
+                  "permission_type_name": "game_room_delete"
+                },
+                {
+                  "permission_type_id": 37,
+                  "permission_type_name": "master_view"
+                },
+                {
+                  "permission_type_id": 38,
+                  "permission_type_name": "master_create"
+                },
+                {
+                  "permission_type_id": 39,
+                  "permission_type_name": "master_update"
+                },
+                {
+                  "permission_type_id": 40,
+                  "permission_type_name": "master_delete"
+                },
+                {
+                  "permission_type_id": 41,
+                  "permission_type_name": "agent_view"
+                },
+                {
+                  "permission_type_id": 42,
+                  "permission_type_name": "money_transfer_record_view"
+                },
+                {
+                  "permission_type_id": 43,
+                  "permission_type_name": "report_view"
+                }
+              ]
+            }
+          }
