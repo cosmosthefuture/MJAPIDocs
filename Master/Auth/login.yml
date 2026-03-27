@@ -1,0 +1,87 @@
+info:
+  name: login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/masters/auth/login"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "phone_number": "09000000000",
+        "password": "password123"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: login
+    request:
+      url: "{{baseUrl}}/masters/auth/login"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "email_or_username": "master@example.com",
+            "password": "password123"
+          }
+    response:
+      statusText: "200"
+      headers:
+        - name: Host
+          value: localhost:8000
+        - name: Connection
+          value: close
+        - name: X-Powered-By
+          value: PHP/8.2.12
+        - name: Cache-Control
+          value: no-cache, private
+        - name: Date
+          value: Tue, 10 Feb 2026 06:36:11 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+              "response": {
+                  "status": "success",
+                  "message": "Master account Logged in Successfully"
+              },
+              "data": {
+                  "token_type": "bearer",
+                  "accessToken": "12|Lnj0gnfkhJ9mgWgRNquhQlbBJYoKDjqYOQl6VgML7247f05a",
+                  "user": {
+                      "id": 1,
+                      "name": "New Master",
+                      "email": "master@example.com",
+                      "phone_number": "09111111",
+                      "username": "masterexample123",
+                      "incentive_percentage": 5,
+                      "status": "active",
+                      "force_reset_password": false,
+                      "last_logined": "2026-02-10 06:36:11",
+                      "email_verified_at": null,
+                      "created_at": "2026-02-09 13:02:26",
+                      "updated_at": "2026-02-10 06:36:11",
+                      "deleted_at": null
+                  },
+                  "type": "master",
+                  "permission_list": null
+              }
+          }

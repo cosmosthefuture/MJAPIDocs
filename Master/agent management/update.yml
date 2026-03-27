@@ -1,0 +1,35 @@
+info:
+  name: update
+  type: http
+  seq: 5
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/masters/agents/:id"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: "2"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Agent One Update",
+      //   "email": "agentone@example.com",
+        "phone_number": "09222222222",
+        "username": "agentoneexample123",
+        "winning_commission_percentage": 3,
+        "agent_code": "NB90JH"
+      }
+  auth:
+    type: bearer
+    token: "{{masterAccessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

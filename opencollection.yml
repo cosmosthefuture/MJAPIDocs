@@ -19,9 +19,13 @@ request:
     - name: baseUrl
       value: http://localhost:8000/api
     - name: adminAccessToken
-      value: 1|0u36wuUymSWBOYUFRCWQValh8WHRhdnnyJQEseqr9b9081f4
+      value: 1|BKvtFEswjbKpTwShGAOV1SU0E9aBKyXCoxsKZLuJ3ebd447f
     - name: userAccessToken
       value: 2|l8sT6tQTKLl7S3lyCZHlBMT4IShM8YKZldTTBQTcd4c7a11b
+    - name: masterAccessToken
+      value: 2|VibIS5I5xiQBA7fILZHe9VE8uzYuWKKRMhmdYiMAbae3eb37
+    - name: agentAccessToken
+      value: 3|wNQkqX3JCLFRv5rPJbqrZNiQ7fXvrwzv34gWUvx6afe5acf7
 bundled: false
 extensions:
   bruno:

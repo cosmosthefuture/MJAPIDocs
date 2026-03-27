@@ -1,0 +1,90 @@
+info:
+  name: login
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/agents/auth/login"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "phone_number": "09000000000",
+        "password": "password123",
+        "fcm_token": "example3"
+      }
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: login
+    request:
+      url: "{{baseUrl}}/agents/auth/login"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: |-
+          {
+            "email_or_username": "agent@example.com",
+            "password": "password123"
+          }
+    response:
+      statusText: "200"
+      headers:
+        - name: Host
+          value: localhost:8000
+        - name: Connection
+          value: close
+        - name: X-Powered-By
+          value: PHP/8.2.12
+        - name: Cache-Control
+          value: no-cache, private
+        - name: Date
+          value: Tue, 10 Feb 2026 06:52:41 GMT
+        - name: Content-Type
+          value: application/json
+        - name: Vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+              "response": {
+                  "status": "success",
+                  "message": "Agent account Logged in Successfully"
+              },
+              "data": {
+                  "token_type": "bearer",
+                  "accessToken": "14|1Wp9Q56UGkeWlNxQnGgRYwF5blG2cc3cqZolb69f624c41fb",
+                  "user": {
+                      "id": 1,
+                      "name": "New Agent",
+                      "email": "agent@example.com",
+                      "phone_number": "09111111",
+                      "username": "agentexample123",
+                      "agent_code": "2HT6BV",
+                      "incentive_percentage": 2,
+                      "master_id": 1,
+                      "status": "active",
+                      "force_reset_password": false,
+                      "last_logined": "2026-02-10 06:52:40",
+                      "email_verified_at": null,
+                      "created_at": "2026-02-09 13:02:51",
+                      "updated_at": "2026-02-10 06:52:40",
+                      "deleted_at": null
+                  },
+                  "type": "agent",
+                  "permission_list": null
+              }
+          }
