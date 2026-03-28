@@ -1,0 +1,4 @@
+name: MJ-game
+variables:
+  - name: baseUrl
+    value: http://mjbackend.test/api
