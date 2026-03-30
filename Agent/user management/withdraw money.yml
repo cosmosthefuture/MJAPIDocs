@@ -1,0 +1,27 @@
+info:
+  name: withdraw money
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{baseUrl}}/agents/users/withdraw-money"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "user_id": 1,
+        "amount": "300"
+      }
+  auth:
+    type: bearer
+    token: "{{agentAccessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
