@@ -1,0 +1,27 @@
+info:
+  name: withdraw money
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{baseUrl}}/admins/masters/withdraw-money"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "master_id": 1,
+        "amount": "1500"
+      }
+  auth:
+    type: bearer
+    token: "{{adminAccessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
