@@ -19,7 +19,7 @@ request:
     - name: baseUrl
       value: http://localhost:8000/api
     - name: adminAccessToken
-      value: 1|BKvtFEswjbKpTwShGAOV1SU0E9aBKyXCoxsKZLuJ3ebd447f
+      value: 6|5xY6LnXIcIZDf07Ggg2uFjjvOgl3KR8lHHxV5oMib741e300
     - name: userAccessToken
       value: 2|l8sT6tQTKLl7S3lyCZHlBMT4IShM8YKZldTTBQTcd4c7a11b
     - name: masterAccessToken
