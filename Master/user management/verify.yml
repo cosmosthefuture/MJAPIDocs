@@ -1,0 +1,31 @@
+info:
+  name: verify
+  type: http
+  seq: 6
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/masters/users/:id/verify"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: "2"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "password": "password123",
+        "password_confirmation": "password123"
+      }
+  auth:
+    type: bearer
+    token: "{{masterAccessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
