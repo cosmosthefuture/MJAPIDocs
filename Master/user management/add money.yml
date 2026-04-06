@@ -1,0 +1,27 @@
+info:
+  name: add money
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{baseUrl}}/masters/users/add-money"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "user_id": 2,
+        "amount": "1300"
+      }
+  auth:
+    type: bearer
+    token: "{{masterAccessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

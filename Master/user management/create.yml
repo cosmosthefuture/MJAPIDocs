@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/admins/users"
+  url: "{{baseUrl}}/masters/users"
   headers:
     - name: Content-Type
       value: application/json
@@ -13,16 +13,14 @@ http:
     type: json
     data: |-
       {
-        "name": "User Four",
-        "email": "dfsfds@example.com", 
-        "phone_number": "0933456733",
-        "username": "dfsfsfgsf",
-      //   "agent_code": "AGENT",
-        "master_code": "MASTER"
+        "name": "User One",
+        "email": "userone@example.com", 
+        "phone_number": "09111111111",
+        "username": "userone123"
       }
   auth:
     type: bearer
-    token: "{{adminAccessToken}}"
+    token: "{{masterAccessToken}}"
 
 settings:
   encodeUrl: true

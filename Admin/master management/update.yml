@@ -11,7 +11,7 @@ http:
       value: application/json
   params:
     - name: id
-      value: "2"
+      value: "1"
       type: path
   body:
     type: json
@@ -21,7 +21,10 @@ http:
       //   "email": "masterkyawgyi@gmail.com",
         "phone_number": "09111111111",
         "username": "kyawgyiexample123",
-        "winning_commission_percentage": 6
+        "winning_commission_percentage": 6,
+        "master_code": "MASTER1",
+        "password": "newpassword",
+        "password_confirmation": "newpassword"
       }
   auth:
     type: bearer
