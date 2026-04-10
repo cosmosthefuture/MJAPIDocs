@@ -48,11 +48,11 @@ examples:
         - name: cache-control
           value: no-cache, private
         - name: date
-          value: Fri, 03 Apr 2026 04:08:37 GMT
+          value: Fri, 10 Apr 2026 04:36:19 GMT
         - name: content-type
           value: application/json
-        - name: access-control-allow-origin
-          value: "*"
+        - name: vary
+          value: Origin
       body:
         type: json
         data: |-
@@ -63,21 +63,36 @@ examples:
             },
             "data": {
               "id": 1,
-              "master_id": null,
+              "master_id": 1,
               "agent_id": 1,
               "identification_code": "A0001",
-              "name": "New User",
-              "username": "newuser123",
+              "name": "User One",
+              "username": "userone123",
               "phone_number": "09111111111",
-              "email": "newuser@example.com",
+              "email": "userone@example.com",
               "status": "active",
               "is_verified": true,
-              "last_logined": "2026-04-03 04:01:13",
-              "created_at": "2026-04-03 04:01:13",
-              "updated_at": "2026-04-03 04:01:13",
+              "last_logined": null,
+              "created_at": "2026-04-10 04:35:28",
+              "updated_at": "2026-04-10 04:36:09",
               "deleted_at": null,
               "balance": "0",
-              "master": null,
+              "master": {
+                "id": 1,
+                "name": "Default Master",
+                "phone_number": "09000000000",
+                "username": "defaultmaster123",
+                "winning_commission_percentage": 5,
+                "status": "active",
+                "force_reset_password": false,
+                "is_default": 1,
+                "last_logined": null,
+                "email_verified_at": null,
+                "created_at": "2026-04-10 04:32:40",
+                "updated_at": "2026-04-10 04:32:40",
+                "deleted_at": null,
+                "balance": "0"
+              },
               "agent": {
                 "id": 1,
                 "name": "Default Agent",
@@ -91,8 +106,8 @@ examples:
                 "is_default": 1,
                 "last_logined": null,
                 "email_verified_at": null,
-                "created_at": "2026-04-03 04:00:35",
-                "updated_at": "2026-04-03 04:00:35",
+                "created_at": "2026-04-10 04:32:40",
+                "updated_at": "2026-04-10 04:32:40",
                 "deleted_at": null,
                 "balance": "0"
               }

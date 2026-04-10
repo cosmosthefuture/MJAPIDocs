@@ -11,20 +11,19 @@ http:
       value: application/json
   params:
     - name: id
-      value: "1"
+      value: "2"
       type: path
   body:
     type: json
     data: |-
       {
-        "name": "Master Kyaw Gyi Update",
-      //   "email": "masterkyawgyi@gmail.com",
+        "name": "Master Zaw Gyi update",
+      //   "email": "kyawgyi@example.com",
         "phone_number": "09111111111",
-        "username": "kyawgyiexample123",
-        "winning_commission_percentage": 6,
-        "master_code": "MASTER1",
-        "password": "newpassword",
-        "password_confirmation": "newpassword"
+        "username": "zawgyiupdateexample123",
+        "winning_commission_percentage": 7,
+        "password": "password123456",
+        "password_confirmation": "password123456"
       }
   auth:
     type: bearer

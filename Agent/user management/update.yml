@@ -1,0 +1,33 @@
+info:
+  name: update
+  type: http
+  seq: 11
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/agents/users/:id"
+  headers:
+    - name: Content-Type
+      value: application/json
+  params:
+    - name: id
+      value: "5"
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+        "name": "User Two",
+        "email": "usertdwo@example.com", 
+        "phone_number": "09154756111",
+        "username": "userbdgh123"
+      }
+  auth:
+    type: bearer
+    token: "{{agentAccessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

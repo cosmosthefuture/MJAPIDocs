@@ -1,22 +1,26 @@
 info:
-  name: create
+  name: update
   type: http
-  seq: 1
+  seq: 11
 
 http:
-  method: POST
-  url: "{{baseUrl}}/masters/users"
+  method: PUT
+  url: "{{baseUrl}}/masters/users/:id"
   headers:
     - name: Content-Type
       value: application/json
+  params:
+    - name: id
+      value: "3"
+      type: path
   body:
     type: json
     data: |-
       {
-        "name": "User One",
-        "email": "userone@example.com", 
-        "phone_number": "09111111111",
-        "username": "userone123",
+        "name": "User Three dfdsf",
+        "email": "userthrefde@example.com", 
+        "phone_number": "09333333333",
+        "username": "userthrdfsdfee123",
         "agent_code": "AGENT"
       }
   auth:

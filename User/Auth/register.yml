@@ -17,9 +17,7 @@ http:
         "name": "User One",
         "username": "userone123",
         "email": "userone@example.com",
-      //   "agent_code": "AGENT",
-      //   "master_code": "MASTER",
-        //(only one must be filled:agent or master)
+        "agent_code": "AGENT",
         "password": "password123",
         "password_confirmation": "password123",
         "fcm_token": "example"

@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/agents/users/all?page=1&per_page=10&search=active"
+  url: "{{baseUrl}}/agents/users/all?page=1&per_page=10"
   headers:
     - name: Content-Type
       value: application/json
@@ -20,6 +20,7 @@ http:
       value: active
       type: query
       description: can filter with name, ph-no, active, inactive, verifed, unverified
+      disabled: true
   auth:
     type: bearer
     token: "{{agentAccessToken}}"
