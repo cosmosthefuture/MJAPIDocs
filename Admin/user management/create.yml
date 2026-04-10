@@ -13,12 +13,11 @@ http:
     type: json
     data: |-
       {
-        "name": "User Four",
-        "email": "dfsfds@example.com", 
-        "phone_number": "0933456733",
-        "username": "dfsfsfgsf",
-      //   "agent_code": "AGENT",
-        "master_code": "MASTER"
+        "name": "User One",
+        "email": "userone@example.com", 
+        "phone_number": "09111111111",
+        "username": "userone123",
+        "agent_code": "AGENT"
       }
   auth:
     type: bearer
