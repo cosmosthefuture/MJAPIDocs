@@ -1,0 +1,77 @@
+info:
+  name: get token
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/users/web-socket/token/generate"
+  headers:
+    - name: Content-Type
+      value: application/json
+  auth:
+    type: bearer
+    token: "{{userAccessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: example
+    request:
+      url: "{{baseUrl}}/users/web-socket/token/generate"
+      method: POST
+      headers:
+        - name: Content-Type
+          value: application/json
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: host
+          value: localhost:8000
+        - name: connection
+          value: close
+        - name: x-powered-by
+          value: PHP/8.2.30
+        - name: cache-control
+          value: no-cache, private
+        - name: date
+          value: Thu, 23 Apr 2026 09:49:55 GMT
+        - name: content-type
+          value: application/json
+        - name: vary
+          value: Origin
+      body:
+        type: json
+        data: |-
+          {
+            "response": {
+              "status": "success",
+              "message": "Jwt token generated successfully."
+            },
+            "data": {
+              "ws_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3VzZXJzL3dlYi1zb2NrZXQvdG9rZW4vZ2VuZXJhdGUiLCJpYXQiOjE3NzY5Mzc3OTUsImV4cCI6MTc3NjkzODA5NSwibmJmIjoxNzc2OTM3Nzk1LCJqdGkiOiJNbXZvdVM5RVdFZGJIcmdYIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJwdXJwb3NlIjoid2Vic29ja2V0IiwidXNlcl9pZCI6MSwibmFtZSI6IlVzZXIgT25lIn0.wPumyMW2OTaEKToENX8koypcIPPXFjsMUKIjkOEkvh4",
+              "expires_in_sec": 300,
+              "user": {
+                "id": 1,
+                "master_id": 1,
+                "agent_id": 1,
+                "identification_code": "A0001",
+                "name": "User One",
+                "username": "userone123",
+                "phone_number": "09111111111",
+                "email": "userone@example.com",
+                "status": "active",
+                "is_verified": true,
+                "last_logined": "2026-04-23 09:23:07",
+                "created_at": "2026-04-23 09:23:07",
+                "updated_at": "2026-04-23 09:23:07",
+                "deleted_at": null,
+                "balance": "0"
+              }
+            }
+          }

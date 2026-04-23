@@ -1,0 +1,21 @@
+info:
+  name: join room
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{baseUrl}}/users/mah-jong-game-rooms/:id/join"
+  params:
+    - name: id
+      value: "1"
+      type: path
+  auth:
+    type: bearer
+    token: "{{userAccessToken}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
