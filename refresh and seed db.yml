@@ -1,0 +1,15 @@
+info:
+  name: refresh and seed db
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{baseUrl}}/dev/reset"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
